@@ -30,4 +30,9 @@
   width: 100%;
 }
 
+.restraunt-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
