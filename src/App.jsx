@@ -19,12 +19,32 @@ import ReactDOM from "react-dom/client";
           -CopyRight
 */
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const Title = () => (
+   <h1 id="title" key="h2">
+      Food Villa
+   </h1>
+)
+
+const HeaderComponent = () => {
+   return(
+      <div>
+         <Title />
+         <div className="nav-items">
+            <ul>
+               <li>Home</li>
+               <li>About</li>
+               <li>Contact</li>
+               <li>Cart</li>
+            </ul>
+         </div>
+      </div>
+   );
+};
 
 const AppLayout = () => {
-  return(
-     {
-      
-     }
-  )
-} 
+  return {};
+}; 
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeaderComponent />);
