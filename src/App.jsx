@@ -29,7 +29,7 @@ const Title = () => (
   </a>
 );
 
-const HeaderComponent = () => {
+const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -45,10 +45,37 @@ const HeaderComponent = () => {
   );
 };
 
+const RestrauntCard = () => {
+  return (
+    <div className="card">
+      <img
+        src="https://b.zmtcdn.com/data/pictures/chains/2/19082182/18e6d83c0f86b4dcc73fd80a91f4d283.jpg"
+        alt="burger king pic"
+      />
+      <h2>Burger King</h2>
+      <h3>Burgers, American</h3>
+      <h4>4.2 stars</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div>
+      <RestrauntCard />
+    </div>
+  );
+};
+
 const AppLayout = () => {
-  return {};
+  return (
+    <>
+      <Header />
+      <Body />
+    </>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeaderComponent />);
+root.render(<AppLayout />);
