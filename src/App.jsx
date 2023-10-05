@@ -20,30 +20,34 @@ import ReactDOM from "react-dom/client";
 */
 
 const Title = () => (
-   <h1 id="title" key="h2">
-      Food Villa
-   </h1>
-)
+  <a href="/">
+    <img
+      className="logo"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNx76pUGIu1KXqWiqRHteqox-vTDYnsMp6PQ&usqp=CAU"
+      alt="Food Villa Logo"
+    />
+  </a>
+);
 
 const HeaderComponent = () => {
-   return(
-      <div>
-         <Title />
-         <div className="nav-items">
-            <ul>
-               <li>Home</li>
-               <li>About</li>
-               <li>Contact</li>
-               <li>Cart</li>
-            </ul>
-         </div>
+  return (
+    <div className="header">
+      <Title />
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
       </div>
-   );
+    </div>
+  );
 };
 
 const AppLayout = () => {
   return {};
-}; 
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
