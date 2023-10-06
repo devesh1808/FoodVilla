@@ -777,29 +777,27 @@ const restaurantList = [
    },
  ];
 
-const RestrauntCard = () => {
+const RestrauntCard = (props) => {
   return (
     <div className="card">
-      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + restaurantList[0].data?.cloudinaryImageId} />
-      <h2>{restaurantList[0].data?.name}</h2>
-      <h3>{restaurantList[0].data?.cuisines.join(", ")}</h3>
-      <h4>{restaurantList[0].lastMileTravelString} minutes</h4>
+      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restraunt.data?.cloudinaryImageId} />
+      <h2>{props.restraunt.data?.name}</h2>
+      <h3>{props.restraunt.data?.cuisines.join(", ")}</h3>
+      <h4>{props.restraunt.data?.lastMileTravelString} minutes</h4>
     </div>
   );
 };
 
+//props - properties
 const Body = () => {
   return (
     <div className="restraunt-list">
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
+      <RestrauntCard restraunt={restaurantList[0]} /> 
+      <RestrauntCard restraunt={restaurantList[1]} />
+      <RestrauntCard restraunt={restaurantList[2]} />
+      <RestrauntCard restraunt={restaurantList[3]} />
+      <RestrauntCard restraunt={restaurantList[4]} />
+      <RestrauntCard restraunt={restaurantList[5]} />
     </div>
   );
 };
