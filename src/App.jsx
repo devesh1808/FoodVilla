@@ -777,9 +777,9 @@ const restaurantList = [
    },
  ];
 
-//object destructuring
-const RestrauntCard = ({restraunt}) => {
-  const {name, cuisines, cloudinaryImageId, lastMileTravelString} = restraunt.data;   //destructuring the object
+const RestrauntCard = (props) => {
+  const {restraunt} = props;
+  const {name, cuisines, cloudinaryImageId, lastMileTravelString} = restraunt?.data;
   return (
     <div className="card">
       <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} />
@@ -790,16 +790,12 @@ const RestrauntCard = ({restraunt}) => {
   );
 };
 
-//props - properties
 const Body = () => {
   return (
     <div className="restraunt-list">
-      <RestrauntCard restraunt={restaurantList[0]} /> 
-      <RestrauntCard restraunt={restaurantList[1]} />
-      <RestrauntCard restraunt={restaurantList[2]} />
-      <RestrauntCard restraunt={restaurantList[3]} />
-      <RestrauntCard restraunt={restaurantList[4]} />
-      <RestrauntCard restraunt={restaurantList[5]} />
+      {
+        restaurantList.map((restraunts) => (<RestrauntCard key={restraunts.data.id} restraunt={restraunts}/>))
+      }
     </div>
   );
 };
