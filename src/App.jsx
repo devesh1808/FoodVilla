@@ -777,13 +777,15 @@ const restaurantList = [
    },
  ];
 
-const RestrauntCard = (props) => {
+//object destructuring
+const RestrauntCard = ({restraunt}) => {
+  const {name, cuisines, cloudinaryImageId, lastMileTravelString} = restraunt.data;   //destructuring the object
   return (
     <div className="card">
-      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restraunt.data?.cloudinaryImageId} />
-      <h2>{props.restraunt.data?.name}</h2>
-      <h3>{props.restraunt.data?.cuisines.join(", ")}</h3>
-      <h4>{props.restraunt.data?.lastMileTravelString} minutes</h4>
+      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} />
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4>{lastMileTravelString} minutes</h4>
     </div>
   );
 };
