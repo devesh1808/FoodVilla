@@ -779,13 +779,16 @@ const restaurantList = [
 
 const RestrauntCard = (props) => {
   const {restraunt} = props;
-  const {name, cuisines, cloudinaryImageId, lastMileTravelString} = restraunt?.data;
+  const {name, cuisines, cloudinaryImageId, avgRating, costForTwo, deliveryTime} = restraunt?.data;
   return (
     <div className="card">
       <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo / 100} FOR TWO</h4>
       <h4>{lastMileTravelString} minutes</h4>
+      <h4>{deliveryTime} minutes</h4>
     </div>
   );
 };
