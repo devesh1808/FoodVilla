@@ -9,7 +9,7 @@ const RestrauntCard = (props) => {
     avgRating,
     costForTwo,
     deliveryTime,
-  } = restraunt?.data;
+  } = restraunt?.info;
   return (
     <div className="card">
       <img src={CDN_URL + cloudinaryImageId} />
