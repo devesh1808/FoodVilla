@@ -35,6 +35,10 @@
   flex-wrap: wrap;
 }
 
+.restraunt-list :hover{
+  background-color: #f0f0f0;
+}
+
 .filter-btn{
   margin: 10px;
   cursor: pointer;
